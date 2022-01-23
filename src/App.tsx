@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import StoryPage from 'features/story'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+		<div>
+			<StoryPage/>
+		</div>
   );
 }
 
