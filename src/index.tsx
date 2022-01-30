@@ -7,12 +7,15 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RootRoute from 'routes';
+import AuthProvider from 'context/AuthContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
 			<BrowserRouter>
-				<RootRoute/>
+				<AuthProvider>
+					<RootRoute/>
+				</AuthProvider>
 			</BrowserRouter>
     </Provider>
   </React.StrictMode>,

@@ -1,13 +1,15 @@
+import Login from 'Features/Login'
+import Register from 'Features/Register'
 import { Route, Navigate, Outlet } from 'react-router-dom'
 
 const routes = [
 	{
 		path: 'register',
-		element: <div>Register</div>
+		element: <Register/>
 	},
 	{
 		path: 'login',
-		element: <div>Login</div>
+		element: <Login/>
 	}
 ]
 

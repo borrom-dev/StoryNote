@@ -1,12 +1,29 @@
-import { Outlet, Route, Navigate } from 'react-router-dom'
+import Dashboard from 'Features/Dashboard'
+import { Component } from 'react'
+import { Outlet, Route, Navigate, useParams } from 'react-router-dom'
+
+// type ComponentRoute = {
+// 	name: string,
+// 	element: strin
+// }
+
+const Note = () => {
+	const { id } = useParams()
+	return <div>hello world {id}</div>
+}
+
 const routes = [
 	{
 		name: '/',
-		element: <div>Home</div>
+		element: <Dashboard/>
 	},
 	{
 		name: 'story',
 		element: <div>Story</div>
+	},
+	{
+		name: 'hello/:id',
+		element: <Note/>
 	}
 ]
 

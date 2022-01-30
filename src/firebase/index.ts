@@ -1,10 +1,13 @@
 import { initializeApp }  from 'firebase/app'
 import { collection, getFirestore, getDocs, QuerySnapshot, DocumentData } from 'firebase/firestore'
 import { firebaseConfig } from '../config/firebase'
+import { getAuth} from 'firebase/auth' 
 
 const app = initializeApp(firebaseConfig)
 
 const firestore = getFirestore(app)
+
+const auth = getAuth(app)
 
 const notes = collection(firestore, "notes")
 
@@ -41,5 +44,6 @@ function transform(query: Promise<QuerySnapshot<DocumentData>>): Promise<T[]> { 
 
 export default {
 	getNotes: (): Promise<Note[]> => transform(getDocs(notes)) as Promise<Note[]>,
-	getFolders: (): Promise<Folder[]> => transform(getDocs(folders)) as Promise<Folder[]>
+	getFolders: (): Promise<Folder[]> => transform(getDocs(folders)) as Promise<Folder[]>,
+	auth,
 }
